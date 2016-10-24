@@ -1,0 +1,36 @@
+<!-- app/views/courses/add.html/erb -->
+<!--
+t.string   "name"
+t.integer  "number"
+t.integer  "section"
+t.integer  "semesters_id"
+t.integer  "max_students"
+t.integer  "departments_id"
+ -->
+<form class="" action="/save" method="post">
+    <fieldset>
+        <legend>Course Info</legend>
+        <label for="name">Name</label>
+        <input type="text" name="name">
+        <br>
+        <label for="number">Number</label>
+        <input type="number" name="number">
+        <br>
+        <label for="section">Section</label>
+        <input type="number" name="section">
+        <br>
+        <label for="semester_id">Semester ID</label>
+        <input type="number" name="semester_id">
+        <br>
+        <label for="max_students">Max Students</label>
+        <input type="number" name="max_students">
+        <br>
+        <label for="semester_id">Semester ID</label>
+        <input type="number" name="semester_id">
+        <br>
+        <label for="department_id">Department ID</label>
+        <input type="number" name="department_id">
+        <br>
+    </fieldset>
+    <button>Submit</button>
+</form>

@@ -1,0 +1,136 @@
+<div id="dashboard">
+    <h1>DASHBOARD</h1>
+    <div id='chart-container'>
+        <canvas id="chart"></canvas>
+    </div>
+    <section>
+        <% @courses.each do |course| %>
+        <div class="course">
+            <div class="name"><%= course.name %></div>
+            <div class="number"><%= course.number %></div>
+            <div id="tally-<%= course.id %>" class="stat"><%= course.counters.size %>
+                People</div>
+            <div class="actions">
+                <button class="add" onclick="tally(<%= course.id %>)">+</button>
+                <button class="remove" onclick="unTally(<%= course.id %>)">-</button>
+            </div>
+        </div>
+        <% end %>
+        <div class="text-center">
+            <a href="/add">Add New Course</a>
+        </div>
+    </section>
+    <script type="text/javascript">
+        function unTally(id) {
+            $.get('remove-counter/' + id).success(function (counters) {
+                $('#tally-' + id).html(counters.length + ' People');
+            });
+        }
+        function tally(id) {
+            // $ = jquery
+            //
+            // $.get = makes a GET request to your server
+            $.get('example-count/' + id + '/1').success(function (counters) {
+                $('#tally-' + id).html(counters.length + ' People');
+            }).error(console.error);
+        }
+
+        var courses = <%= @courses.to_json(include: :counters).html_safe %>;
+        var context = document.querySelector('#chart');
+
+        // Holds the chart labels
+        var labels = courses.map((course) => course.number);
+        // holds the bars for each course
+        var dataSets = courses.map((course) => course.counters.length);
+
+        /**
+         * Helper to darken pure colors for an easy gradient effect
+         * @param  {String} color   Hex Color
+         * @param  {Numebr} percent Percent to shade
+         * @return {String}         Hex Color
+         */
+        function shadeColor(color, percent) {
+            var f = parseInt(color.slice(1), 16),
+                t = percent < 0
+                    ? 0
+                    : 255,
+                p = percent < 0
+                    ? percent * -1
+                    : percent,
+                R = f >> 16,
+                G = f >> 8 & 0x00FF,
+                B = f & 0x0000FF;
+            return "#" + (0x1000000 + (Math.round((t - R) * p) + R) * 0x10000 + (Math.round((t - G) * p) + G) * 0x100 + (Math.round((t - B) * p) + B)).toString(16).slice(1);
+        }
+
+        var startShade = 1;
+        var colors = courses.map((c, i) => {
+            startShade -= 0.1;
+            return shadeColor('#0000FF', startShade);
+        });
+
+        var chart = new Chart(context, {
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    xAxes: [
+                        {
+                            gridLines: {
+                                color: "rgba(0, 0, 0, 0)"
+                            }
+                        }
+                    ],
+                    yAxes: [
+                        {
+                            gridLines: {
+                                color: "rgba(0, 0, 0, 0)"
+                            }
+                        }
+                    ]
+                }
+            },
+            type: 'horizontalBar',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Students Advised:',
+                        data: dataSets,
+                        backgroundColor: colors
+                    }
+                ]
+            }
+        });
+
+        // write a function to update the chart
+        function updateChart() {
+            chart.data.datasets[0].data = courses.map((course) => course.counters.length);
+            chart.update();
+        }
+
+        // Every so often, get the latest counts, and update the courses array
+        setInterval(function () {
+            $.get('/all-courses').success(newCourses => {
+                courses = newCourses;
+                updateChart();
+            });
+        }, 3000);
+    </script>
+
+    <script>
+        // This function is for web scraping banner for course information
+        function getCourses() {
+            var rows = Array.prototype.slice.call(document.querySelectorAll('tr[style="border-top: thin solid #333333"]'))
+            var items = rows.map(r => {
+                let cells = r.children;
+                return {crn: cells[0].innerText, number: cells[2].innerText, title: cells[5].innerText.trim(), max: cells[7].innerText, section: cells[3].innerText};
+            });
+            return items;
+        }
+    </script>
+</div>
+updateChart();
+</script>
+</div>
+>
+</div>

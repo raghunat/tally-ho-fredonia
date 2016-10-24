@@ -1,0 +1,142 @@
+// Place all the styles related to the login controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'https://fonts.googleapis.com/css?family=Parisienne';
+html, body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: #4B79A1; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #4B79A1 , #283E51); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #4B79A1 , #283E51); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+#mr-t {
+  font-family: 'Parisienne', cursive;
+  font-size: 360px;
+  height: 0;
+  position: absolute;
+  left: 20%;
+  animation: mrT 1.25s ease-out forwards;
+  color: rgb(133, 187, 237);
+  text-shadow: 2px 2px 6px #333;
+}
+#login-form {
+  opacity: 0;
+  animation: login 1s ease-out forwards;
+  animation-delay: .25s;
+  box-shadow: 2px 2px 6px #333;
+
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  background-color: white;
+  border-radius: 8px;
+  padding: 2em;
+  max-width: 200px;
+  margin: auto;
+  input {
+    display: block;
+    margin: auto;
+    margin-bottom: 32px;
+    font-size: 1.2em;
+  }
+  button {
+    width: 100px;
+    display: block;
+    margin: auto;
+  }
+
+  a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 8px;
+    color: gray;
+    &:visited {
+      color: gray
+    }
+  }
+
+}
+
+#about-us {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  background-color: rgb(255, 167, 115);
+  text-align: center;
+  font-size: 32px;
+  border-radius: 50px;
+  text-shadow: 0px 0px 1px #333;
+  color: white;
+
+  animation: aboutButton 1s ease-in 3;
+}
+
+@keyframes login {
+  from {
+    opacity: 0;
+    transform: translateY(-5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes mrT {
+  from {
+    opacity: 0;
+    transform: translateX(-5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes aboutButton {
+  0% {
+    transform: rotate(-45deg);
+  }
+  50% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(-45deg);
+  }
+}
+
+
+
+// Register styles
+
+#register {
+  max-width: 500px;
+  margin: 50px auto;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 3px 3px 10px black;
+
+  input {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: none;
+    margin-top: 24px;
+    font-size: 1.4em;
+    &[type=submit] {
+      box-shadow: 2px 2px 4px black;
+      width: 40%;
+      padding: 8px;
+      background: rgb(25, 53, 172);
+      color: white;
+      margin-left: 30%;
+      margin-bottom: 24px;
+    }
+  }
+}

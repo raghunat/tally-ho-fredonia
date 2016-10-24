@@ -1,0 +1,319 @@
+[{
+    "crn": "10250",
+    "number": "104",
+    "title": "Intro Microcomputer Software",
+    "max": "28",
+    "section": "01"
+}, {
+    "crn": "15351",
+    "number": "104",
+    "title": "Intro Microcomputer Software",
+    "max": "28",
+    "section": "02"
+}, {
+    "crn": "15352",
+    "number": "104",
+    "title": "Intro Microcomputer Software",
+    "max": "28",
+    "section": "03"
+}, {
+    "crn": "10262",
+    "number": "105",
+    "title": "Visual BASIC I",
+    "max": "28",
+    "section": "01"
+}, {
+    "crn": "10272",
+    "number": "107",
+    "title": "Web Programming I",
+    "max": "28",
+    "section": "01"
+}, {
+    "crn": "10274",
+    "number": "107",
+    "title": "Web Programming I",
+    "max": "28",
+    "section": "02"
+}, {
+    "crn": "10275",
+    "number": "107",
+    "title": "Web Programming I",
+    "max": "30",
+    "section": "03"
+}, {
+    "crn": "12983",
+    "number": "120",
+    "title": "Computer Science Overview",
+    "max": "24",
+    "section": "01"
+}, {
+    "crn": "13648",
+    "number": "120",
+    "title": "Computer Science Overview",
+    "max": "24",
+    "section": "02"
+}, {
+    "crn": "14894",
+    "number": "120",
+    "title": "Computer Science Overview",
+    "max": "24",
+    "section": "03"
+}, {
+    "crn": "17346",
+    "number": "120",
+    "title": "Computer Science Overview",
+    "max": "24",
+    "section": "04"
+}, {
+    "crn": "17597",
+    "number": "120",
+    "title": "Computer Science Overview",
+    "max": "28",
+    "section": "05"
+}, {
+    "crn": "19819",
+    "number": "120",
+    "title": "Computer Science Overview",
+    "max": "24",
+    "section": "06"
+}, {
+    "crn": "10284",
+    "number": "121",
+    "title": "Computer Science I",
+    "max": "22",
+    "section": "01"
+}, {
+    "crn": "10285",
+    "number": "121",
+    "title": "Computer Science I",
+    "max": "22",
+    "section": "02"
+}, {
+    "crn": "15752",
+    "number": "151",
+    "title": "Intro to Information Systems",
+    "max": "25",
+    "section": "01"
+}, {
+    "crn": "15753",
+    "number": "151",
+    "title": "Intro to Information Systems",
+    "max": "25",
+    "section": "02"
+}, {
+    "crn": "19841",
+    "number": "201",
+    "title": "Computer Security and Ethics",
+    "max": "22",
+    "section": "01"
+}, {
+    "crn": "10288",
+    "number": "205",
+    "title": "Visual BASIC II",
+    "max": "24",
+    "section": "01"
+}, {
+    "crn": "15353",
+    "number": "207",
+    "title": "Web Programming II",
+    "max": "28",
+    "section": "01"
+}, {
+    "crn": "18099",
+    "number": "208",
+    "title": "Computer Game Design",
+    "max": "15",
+    "section": "01"
+}, {
+    "crn": "10303",
+    "number": "221",
+    "title": "Computer Science II",
+    "max": "22",
+    "section": "01"
+}, {
+    "crn": "19507",
+    "number": "221",
+    "title": "Computer Science II",
+    "max": "22",
+    "section": "02"
+}, {
+    "crn": "10304",
+    "number": "231",
+    "title": "Systems Programming",
+    "max": "24",
+    "section": "01"
+}, {
+    "crn": "12987",
+    "number": "241",
+    "title": "Discrete Math for Comp Sci I",
+    "max": "20",
+    "section": "01"
+}, {
+    "crn": "10305",
+    "number": "242",
+    "title": "Discrete Math for Comp Sci II",
+    "max": "20",
+    "section": "01"
+}, {
+    "crn": "15354",
+    "number": "251",
+    "title": "Information Systems Structures",
+    "max": "25",
+    "section": "01"
+}, {
+    "crn": "15355",
+    "number": "251",
+    "title": "Information Systems Structures",
+    "max": "25",
+    "section": "02"
+}, {
+    "crn": "15483",
+    "number": "251",
+    "title": "Information Systems Structures",
+    "max": "25",
+    "section": "03"
+}, {
+    "crn": "17417",
+    "number": "251",
+    "title": "Information Systems Structures",
+    "max": "25",
+    "section": "04"
+}, {
+    "crn": "17426",
+    "number": "251",
+    "title": "Information Systems Structures",
+    "max": "25",
+    "section": "05"
+}, {
+    "crn": "18792",
+    "number": "251",
+    "title": "Information Systems Structures",
+    "max": "25",
+    "section": "06"
+}, {
+    "crn": "19476",
+    "number": "291",
+    "title": "SpTp: Web Prgrmng with Node",
+    "max": "24",
+    "section": "01"
+}, {
+    "crn": "10306",
+    "number": "300",
+    "title": "Internship",
+    "max": "5",
+    "section": "01"
+}, {
+    "crn": "15184",
+    "number": "305",
+    "title": "Computer Lab Assistantship",
+    "max": "10",
+    "section": "01"
+}, {
+    "crn": "14896",
+    "number": "312",
+    "title": "Computer Structures",
+    "max": "25",
+    "section": "01"
+}, {
+    "crn": "19454",
+    "number": "316",
+    "title": "Intro Human-Comp Interaction",
+    "max": "18",
+    "section": "01"
+}, {
+    "crn": "10310",
+    "number": "321",
+    "title": "Paradigms of Programming Lang",
+    "max": "25",
+    "section": "01"
+}, {
+    "crn": "10311",
+    "number": "341",
+    "title": "Data Structures",
+    "max": "25",
+    "section": "01"
+}, {
+    "crn": "17416",
+    "number": "351",
+    "title": "Business Systems Development",
+    "max": "24",
+    "section": "01"
+}, {
+    "crn": "15356",
+    "number": "425",
+    "title": "Software Engineering",
+    "max": "16",
+    "section": "01"
+}, {
+    "crn": "19813",
+    "number": "425",
+    "title": "Software Engineering",
+    "max": "16",
+    "section": "02"
+}, {
+    "crn": "10314",
+    "number": "435",
+    "title": "Data Comm/Networks II",
+    "max": "20",
+    "section": "01"
+}, {
+    "crn": "19453",
+    "number": "441",
+    "title": "Analysis/Design of Algorithms",
+    "max": "20",
+    "section": "01"
+}, {
+    "crn": "19474",
+    "number": "455",
+    "title": "Relational/Object Databases",
+    "max": "18",
+    "section": "01"
+}, {
+    "crn": "19840",
+    "number": "463",
+    "title": "Intro DIP/Computer Vision",
+    "max": "22",
+    "section": "01"
+}, {
+    "crn": "19455",
+    "number": "473",
+    "title": "Data Warehouse and Mining",
+    "max": "18",
+    "section": "01"
+}, {
+    "crn": "19298",
+    "number": "496",
+    "title": "SpTp: Career Develpment II",
+    "max": "2",
+    "section": "01"
+}, {
+    "crn": "19508",
+    "number": "496",
+    "title": "SpTp: Career Development II",
+    "max": "3",
+    "section": "03"
+}, {
+    "crn": "19509",
+    "number": "499",
+    "title": "Senior Project",
+    "max": "3",
+    "section": "01"
+}, {
+    "crn": "19510",
+    "number": "499",
+    "title": "Senior Project",
+    "max": "3",
+    "section": "02"
+}, {
+    "crn": "19511",
+    "number": "499",
+    "title": "Senior Project",
+    "max": "3",
+    "section": "03"
+}, {
+    "crn": "19600",
+    "number": "499",
+    "title": "Senior Project",
+    "max": "2",
+    "section": "05"
+}]
