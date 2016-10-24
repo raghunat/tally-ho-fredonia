@@ -11,9 +11,9 @@
     <section id='courses'>
         <% @courses.each do |course| %>
         <div class="course" id="course-<%= course.id %>">
-            <div class="name"><%= course.name %></div>
             <div class="number"><%= course.number %></div>
-            <div id="tally-<%= course.id %>" class="stat"><%= course.counters.size %>
+            <div class="name"><%= course.name %></div>
+            <div id="tally-<%= course.id %>" class="stat"><%= course.counters.size %>/<%= course.max_students %>
                 People</div>
             <div class="actions">
                 <button class="add" onclick="tally(<%= course.id %>)">+</button>
@@ -25,16 +25,19 @@
     <script type="text/javascript">
 
         function unTally(id) {
+            var course = courses.find(function (course) {
+                return course.id === id;
+            });
             $.get('remove-counter/' + id).success(function (counters) {
-                $('#tally-' + id).html(counters.length + ' People');
+                $('#tally-' + id).html(counters.length + '/' + course.max_students + ' People');
             });
         }
         function tally(id) {
-            // $ = jquery
-            //
-            // $.get = makes a GET request to your server
+            var course = courses.find(function (course) {
+                return course.id === id;
+            });
             $.get('example-count/' + id + '/1').success(function (counters) {
-                $('#tally-' + id).html(counters.length + ' People');
+                $('#tally-' + id).html(counters.length + '/' + course.max_students + ' People');
             }).error(console.error);
         }
 
@@ -75,6 +78,7 @@
             return shadeColor('#0000FF', startShade);
         });
 
+        Chart.defaults.global.defaultFontColor = "#fff";
         var chart = new Chart(context, {
             options: {
                 maintainAspectRatio: false,

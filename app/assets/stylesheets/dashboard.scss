@@ -8,6 +8,7 @@
   height: 100%;
   top: 0;
   left: 0;
+  font-family: 'Open Sans', sans-serif;
 
   background: #4B79A1; /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #4B79A1 , #283E51); /* Chrome 10-25, Safari 5.1-6 */
@@ -23,9 +24,10 @@
 
   .search {
     position: absolute;
-    width: 80%;
+    width: 60%;
     height: 20%;
     top:0;
+
 
     input {
       width: 100%;
@@ -44,17 +46,17 @@
     position: absolute;
     overflow: auto;
     height: 80%;
-    width: 80%;
+    width: 60%;
     top:20%;
   }
 
   #chart-container {
-    background-color: rgb(204, 204, 249);
+    // background-color: rgb(204, 204, 249);
     position: absolute;
     top: 5%;
     height: 94.5%;
-    width: 20%;
-    left: 80%;
+    width: 40%;
+    left: 60%;
   }
 }
 
@@ -83,12 +85,13 @@
     width: 20%;
   }
   .actions {
+    text-align: right;
     width: 20%;
     button.add {
       animation: change-color 1s ease-in infinite;
       background-color: rgb(90, 236, 135);
       border: none;
-      width: 80px;
+      width: 50px;
       height: 30px;
 
       &:hover {
@@ -98,6 +101,9 @@
     button.remove {
       background-color: red;
       color: white;
+      border: none;
+      width: 50px;
+      height: 30px;
     }
   }
 }
