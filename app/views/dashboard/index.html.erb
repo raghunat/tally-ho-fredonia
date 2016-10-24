@@ -1,11 +1,16 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+
 <div id="dashboard">
     <h1>DASHBOARD</h1>
+    <div class="search">
+        <input placeholder="Search…" type="search" onkeyup="search(this)" autocomplete="off">
+    </div>
     <div id='chart-container'>
         <canvas id="chart"></canvas>
     </div>
-    <section>
+    <section id='courses'>
         <% @courses.each do |course| %>
-        <div class="course">
+        <div class="course" id="course-<%= course.id %>">
             <div class="name"><%= course.name %></div>
             <div class="number"><%= course.number %></div>
             <div id="tally-<%= course.id %>" class="stat"><%= course.counters.size %>
@@ -16,11 +21,9 @@
             </div>
         </div>
         <% end %>
-        <div class="text-center">
-            <a href="/add">Add New Course</a>
-        </div>
     </section>
     <script type="text/javascript">
+
         function unTally(id) {
             $.get('remove-counter/' + id).success(function (counters) {
                 $('#tally-' + id).html(counters.length + ' People');
@@ -39,7 +42,7 @@
         var context = document.querySelector('#chart');
 
         // Holds the chart labels
-        var labels = courses.map((course) => course.number);
+        var labels = courses.map((course) => course.number + '-' + course.section);
         // holds the bars for each course
         var dataSets = courses.map((course) => course.counters.length);
 
@@ -63,9 +66,12 @@
             return "#" + (0x1000000 + (Math.round((t - R) * p) + R) * 0x10000 + (Math.round((t - G) * p) + G) * 0x100 + (Math.round((t - B) * p) + B)).toString(16).slice(1);
         }
 
-        var startShade = 1;
+        var startShade = .6;
         var colors = courses.map((c, i) => {
             startShade -= 0.1;
+            if (startShade < 0) {
+                startShade = .6;
+            }
             return shadeColor('#0000FF', startShade);
         });
 
@@ -115,8 +121,22 @@
                 updateChart();
             });
         }, 3000);
-    </script>
 
+        function search(input) {
+            var newItems = [];
+            var value = input.value;
+            courses.forEach(function (course) {
+                if (!input.value || course.name.toLowerCase().indexOf(value.toLowerCase()) >= 0 || course.number.toString().toLowerCase().indexOf(value.toLowerCase()) >= 0) {
+                    newItems.push(course);
+                }
+            });
+            $('#courses .course').hide()
+            newItems.forEach(function (item) {
+                $('#course-' + item.id + '.course').show();
+            });
+        }
+    </script>
+    <!--
     <script>
         // This function is for web scraping banner for course information
         function getCourses() {
@@ -127,7 +147,7 @@
             });
             return items;
         }
-    </script>
+    </script> -->
 </div>
 updateChart();
 </script>
