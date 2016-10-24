@@ -94,6 +94,10 @@
       width: 50px;
       height: 30px;
 
+      &:disabled {
+        background-color: gray;
+      }
+
       &:hover {
         background-color: lighten(rgb(90, 236, 135), 30%);
       }
@@ -104,6 +108,14 @@
       border: none;
       width: 50px;
       height: 30px;
+    }
+    .number_mine {
+      color: gray;
+      border-bottom: dotted 1px gray;
+      font-style: italic;
+      &:hover {
+        color: blue;
+      }
     }
   }
 }

@@ -17,8 +17,9 @@
             <div id="tally-<%= course.id %>" class="stat"><%= course.counters.size %>/<%= course.max_students %>
                 People</div>
             <div class="actions">
-                <button class="add" onclick="tally(<%= course.id %>)">+</button>
+                <button class="add" onclick="tally(<%= course.id %>, this)">+</button>
                 <button class="remove" onclick="unTally(<%= course.id %>)">-</button>
+                <span class="number_mine" title='Number of students you have registered for this course'><%= (course.counters.select { |counter| counter.users_id == @user_id }).size %></span>
             </div>
         </div>
         <% end %>
@@ -33,13 +34,18 @@
                 $('#tally-' + id).html(counters.length + '/' + course.max_students + ' People');
             });
         }
-        function tally(id) {
+        function tally(id, button) {
             var course = courses.find(function (course) {
                 return course.id === id;
             });
             $.get('example-count/' + id + '/1').success(function (counters) {
                 $('#tally-' + id).html(counters.length + '/' + course.max_students + ' People');
             }).error(console.error);
+
+            button.disabled = true;
+            setTimeout(function () {
+                button.disabled = false;
+            }, 10000);
         }
 
         var courses = <%= @courses.to_json(include: :counters).html_safe %>;

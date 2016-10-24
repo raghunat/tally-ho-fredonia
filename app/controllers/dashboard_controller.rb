@@ -4,6 +4,7 @@ class DashboardController < ApplicationController
       redirect_to '/'
     end
     @courses = Course.all
+    @user_id = session[:user]
   end
 
   def example_new
@@ -23,7 +24,7 @@ class DashboardController < ApplicationController
   # Give a course a counter
   def create_counter
     counter = Counter.new
-    counter.users_id = params[:users_id]
+    counter.users_id = session[:user].to_i
     counter.courses_id = params[:courses_id]
     if !counter.save
       render json: "Could not Save", status: 400
