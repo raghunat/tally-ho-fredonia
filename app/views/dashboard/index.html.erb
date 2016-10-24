@@ -11,7 +11,8 @@
     <section id='courses'>
         <% @courses.each do |course| %>
         <div class="course" id="course-<%= course.id %>">
-            <div class="number"><%= course.number %></div>
+            <div class="number"><%= course.number %>
+                Sec. 0<%= course.section %></div>
             <div class="name"><%= course.name %></div>
             <div id="tally-<%= course.id %>" class="stat"><%= course.counters.size %>/<%= course.max_students %>
                 People</div>
